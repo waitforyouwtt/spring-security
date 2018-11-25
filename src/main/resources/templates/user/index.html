@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>/user/index</title>
+</head>
+<body>
+   <div th:substituteby="index::logout"></div>
+   <h1>这个界面是被保护的</h1>
+   <p><a href="/index" th:href="@{/index}">返回首页</a></p>
+   <p><a href="/blogs" th:href="@{/blogs}">管理博客</a></p>
+</body>
+</html>

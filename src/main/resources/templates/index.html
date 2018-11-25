@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login page</title>
+</head>
+<body>
+<h1>index page</h1>
+<p>这个界面没有受保护，你可以进已被保护的界面</p>
+
+<div th:fragment="logout" sec:authorize="isAuthenticated()">
+    登陆用户：<span sec:authentication="name"></span> |
+    用户角色：<span sec:authentication="principal.authorities"></span>
+
+    <div>
+        <form action="#" th:action="@{/logout}" method="post">
+            <input type="submit" value="退出"/>
+        </form>
+    </div>
+</div>
+
+<ul>
+ <li> 点击<a href="/user/index" th:href="@{/user/index}">去/user/index已被保护</a></li>
+</ul>
+</body>
+</html>
